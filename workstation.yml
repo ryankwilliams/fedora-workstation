@@ -3,4 +3,4 @@
   hosts: workstation
 
   tasks:
-    - include_tasks: tasks/foo.yml
+    - include_tasks: tasks/remove_packages.yml

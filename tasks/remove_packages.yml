@@ -1,0 +1,16 @@
+---
+- name: Remove packages
+  dnf:
+    name: "{{ item }}"
+    state: absent
+    autoremove: yes
+  become: yes
+  loop:
+    - cheese
+    - evolution
+    - gnome-boxes
+    - gnome-calendar
+    - gnome-maps
+    - gnome-initial-setup
+    - rhythmbox
+    - shotwell
