@@ -1,0 +1,6 @@
+---
+- name: Workstation Setup
+  hosts: workstation
+
+  tasks:
+    - include_tasks: tasks/foo.yml
