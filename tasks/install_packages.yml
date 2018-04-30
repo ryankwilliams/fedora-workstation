@@ -1,0 +1,21 @@
+---
+- name: Install packages
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  loop:
+    - gcc
+    - git
+    - gnome-tweak-tool
+    - hexchat
+    - krb5-workstation
+    - libffi
+    - libffi-devel
+    - make
+    - openssl
+    - openssl-devel
+    - python2-devel
+    - python3-devel
+    - redhat-rpm-config
+    - tree
