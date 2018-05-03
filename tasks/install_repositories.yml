@@ -1,0 +1,36 @@
+---
+- name: Install docker ce stable repository
+  yum_repository:
+    name: docker-ce-stable
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+  become: yes
+
+- name: Install docker ce edge repository
+  yum_repository:
+    name: docker-ce-stable
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/edge
+    enabled: no
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+  become: yes
+
+- name: Install docker ce test repository
+  yum_repository:
+    name: docker-ce-stable
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/test
+    enabled: no
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+  become: yes
+
+- name: Install google chrome repository
+  yum_repository:
+    name: google-chrome
+    baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+  become: yes
