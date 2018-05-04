@@ -34,3 +34,12 @@
     gpgcheck: yes
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
   become: yes
+
+- name: Install visual studio code
+  yum_repository:
+    name: visual-studio-code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  become: yes
