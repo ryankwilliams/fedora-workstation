@@ -19,6 +19,8 @@
     - openssl
     - openssl-devel
     - python2-devel
+    - python2-libselinux
     - python3-devel
+    - python3-libselinux
     - redhat-rpm-config
     - tree
