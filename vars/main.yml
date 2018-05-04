@@ -1,0 +1,7 @@
+---
+
+# default user
+default_user: rywillia
+
+# jetbrains toolbox (this version will change over time)
+jetbrains_toolbox: '1.8.3678'
