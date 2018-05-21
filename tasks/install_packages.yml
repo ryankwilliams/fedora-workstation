@@ -18,6 +18,7 @@
     - make
     - openssl
     - openssl-devel
+    - python2-cryptography
     - python2-devel
     - python2-libselinux
     - python3-devel
