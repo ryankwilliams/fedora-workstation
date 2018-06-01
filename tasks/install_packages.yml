@@ -6,6 +6,7 @@
   become: yes
   loop:
     - code
+    - copr-cli
     - copr-rpmbuild
     - docker-ce
     - gcc
