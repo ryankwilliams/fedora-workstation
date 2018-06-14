@@ -4,5 +4,4 @@
     name: "{{ item }}"
     state: started
     enabled: true
-  become: yes
   loop: "{{ services }}"

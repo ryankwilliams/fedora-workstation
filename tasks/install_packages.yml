@@ -3,7 +3,6 @@
   dnf:
     name: "{{ item }}"
     state: latest
-  become: yes
   loop:
     - code
     - copr-cli
