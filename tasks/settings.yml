@@ -1,0 +1,18 @@
+---
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: Create groups
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ custom_groups }}"
+  become: yes
+
+- name: Add groups to {{ default_user }}
+  user:
+    name: "{{ default_user }}"
+    groups: "{{ item }}"
+  loop: "{{ custom_groups }}"
+  become: yes

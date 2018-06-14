@@ -11,3 +11,4 @@
     - include_tasks: tasks/install_packages.yml
     - include_tasks: tasks/install_jetbrains_toolbox.yml
     - include_tasks: tasks/start_services.yml
+    - include_tasks: tasks/settings.yml
