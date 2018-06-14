@@ -4,6 +4,7 @@
     name: "{{ item }}"
     state: latest
   loop:
+    - beaker-client
     - code
     - copr-cli
     - copr-rpmbuild

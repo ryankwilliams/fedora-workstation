@@ -43,7 +43,7 @@
   tags:
     - install_repos
 
-- name: Install visual studio code
+- name: Install visual studio code repository
   yum_repository:
     name: visual-studio-code
     description: visual-studio-code
@@ -51,5 +51,15 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  tags:
+    - install_repos
+
+- name: Install beaker client repository
+  yum_repository:
+    name: beaker-client
+    description: beaker-client
+    baseurl: https://beaker-project.org/yum/client/Fedora$releasever/
+    enabled: yes
+    gpgcheck: no
   tags:
     - install_repos
