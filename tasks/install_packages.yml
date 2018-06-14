@@ -27,3 +27,4 @@
     - python3-libselinux
     - redhat-rpm-config
     - tree
+    - vim-enhanced
