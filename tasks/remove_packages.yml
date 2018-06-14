@@ -9,7 +9,10 @@
     - evolution
     - gnome-boxes
     - gnome-calendar
+    - gnome-contacts
     - gnome-maps
     - gnome-initial-setup
     - rhythmbox
     - shotwell
+  tags:
+    - remove_packages

@@ -5,3 +5,5 @@
     state: started
     enabled: true
   loop: "{{ services }}"
+  tags:
+    - start_services

@@ -4,14 +4,20 @@
   get_url:
     url: "https://download.jetbrains.com/toolbox/jetbrains-toolbox-{{ jetbrains_toolbox }}.tar.gz"
     dest: "/tmp/jetbrains-toolbox-{{ jetbrains_toolbox }}.tar.gz"
+  tags:
+    - install_jetbrains_toolbox
 
 - name: Extract jetbrains-toolbox application
   unarchive:
     src: "/tmp/jetbrains-toolbox-{{ jetbrains_toolbox }}.tar.gz"
     dest: "/tmp/"
+  tags:
+    - install_jetbrains_toolbox
 
 - name: Move jetbrains-toolbox application to default user local bin directory
   copy:
     src: "/tmp/jetbrains-toolbox-{{ jetbrains_toolbox }}/jetbrains-toolbox"
     dest: "/home/{{ default_user }}/.local/bin/"
     mode: 0775
+  tags:
+    - install_jetbrains_toolbox

@@ -2,15 +2,21 @@
 - name: Set hostname
   hostname:
     name: "{{ hostname }}"
+  tags:
+    - system_settings
 
 - name: Create groups
   group:
     name: "{{ item }}"
     state: present
   loop: "{{ custom_groups }}"
+  tags:
+    - system_settings
 
 - name: Add groups to {{ default_user }}
   user:
     name: "{{ default_user }}"
     groups: "{{ item }}"
   loop: "{{ custom_groups }}"
+  tags:
+    - system_settings

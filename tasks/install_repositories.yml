@@ -7,6 +7,8 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
+  tags:
+    - install_repos
 
 - name: Install docker ce edge repository
   yum_repository:
@@ -16,6 +18,8 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
+  tags:
+    - install_repos
 
 - name: Install docker ce test repository
   yum_repository:
@@ -25,6 +29,8 @@
     enabled: no
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
+  tags:
+    - install_repos
 
 - name: Install google chrome repository
   yum_repository:
@@ -34,6 +40,8 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+  tags:
+    - install_repos
 
 - name: Install visual studio code
   yum_repository:
@@ -43,3 +51,5 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  tags:
+    - install_repos
