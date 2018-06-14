@@ -12,3 +12,8 @@ hostname: laptop
 # groups to create
 custom_groups:
   - docker
+
+# services
+services:
+  - docker
+  - cups-browsed

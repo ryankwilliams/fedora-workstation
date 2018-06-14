@@ -1,7 +1,8 @@
 ---
-- name: Start and enable docker
+- name: Start and enable services
   service:
-    name: docker
+    name: "{{ item }}"
     state: started
     enabled: true
   become: yes
+  loop: "{{ services }}"
