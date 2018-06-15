@@ -1,13 +1,7 @@
 ---
 
-# default user
-default_user: rywillia
-
-# jetbrains toolbox (this version will change over time)
-jetbrains_toolbox: '1.8.3678'
-
-# hostname
-hostname: laptop
+# jetbrains toolbox version
+jetbrains_toolbox: "1.8.3678"
 
 # groups to create
 custom_groups:
@@ -20,5 +14,5 @@ services:
   - docker
   - libvirtd
 
-# vagrant version to install
+# vagrant version
 vagrant_version: "2.1.1"
