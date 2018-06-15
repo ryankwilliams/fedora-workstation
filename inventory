@@ -1,5 +1,2 @@
 [workstation]
 localhost
-
-[workstation:vars]
-ansible_connection=local
