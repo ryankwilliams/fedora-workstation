@@ -10,18 +10,27 @@
     - include_tasks: tasks/remove_packages.yml
       tags:
         - remove_packages
+
     - include_tasks: tasks/install_repositories.yml
       tags:
         - install_repos
+
     - include_tasks: tasks/install_packages.yml
       tags:
         - install_packages
+
     - include_tasks: tasks/install_jetbrains_toolbox.yml
       tags:
         - install_jetbrains_toolbox
+
     - include_tasks: tasks/start_services.yml
       tags:
         - start_services
+
     - include_tasks: tasks/settings.yml
       tags:
         - system_settings
+
+    - include_tasks: tasks/install_vagrant_libvirt.yml
+      tags:
+        - vagrant_libvirt_plugin

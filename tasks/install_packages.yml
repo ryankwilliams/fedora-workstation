@@ -18,6 +18,9 @@
     - libffi
     - libffi-devel
     - libvirt
+    - libvirt-devel
+    - libxml2-devel
+    - libxslt-devel
     - make
     - openssl
     - openssl-devel
@@ -26,9 +29,12 @@
     - python2-libselinux
     - python3-devel
     - python3-libselinux
+    - qemu
     - qemu-kvm
     - redhat-rpm-config
     - remmina
+    - ruby
+    - ruby-devel
     - tree
     - vim-enhanced
     - virt-manager
