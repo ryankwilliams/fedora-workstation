@@ -15,8 +15,9 @@ custom_groups:
 
 # services
 services:
-  - docker
   - cups-browsed
+  - docker
+  - libvirtd
 
 # vagrant version to install
 vagrant_version: "2.1.1"

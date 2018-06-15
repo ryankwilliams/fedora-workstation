@@ -17,6 +17,7 @@
     - krb5-workstation
     - libffi
     - libffi-devel
+    - libvirt
     - make
     - openssl
     - openssl-devel
@@ -25,9 +26,13 @@
     - python2-libselinux
     - python3-devel
     - python3-libselinux
+    - qemu-kvm
     - redhat-rpm-config
+    - remmina
     - tree
     - vim-enhanced
+    - virt-manager
+    - virt-viewer
   tags:
     - install_packages
 
