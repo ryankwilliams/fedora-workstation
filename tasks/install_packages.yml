@@ -38,6 +38,7 @@
     - ruby-devel
     - tree
     - vim-enhanced
+    - virt-install
     - virt-manager
     - virt-viewer
   tags:
