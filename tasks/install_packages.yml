@@ -28,8 +28,10 @@
     - pipenv
     - python2-cryptography
     - python2-devel
+    - python2-ipython
     - python2-libselinux
     - python3-devel
+    - python3-ipython
     - python3-libselinux
     - qemu
     - qemu-kvm
