@@ -25,6 +25,7 @@
     - make
     - openssl
     - openssl-devel
+    - pipenv
     - python2-cryptography
     - python2-devel
     - python2-libselinux
