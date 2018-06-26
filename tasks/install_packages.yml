@@ -39,6 +39,7 @@
     - remmina
     - ruby
     - ruby-devel
+    - tilix
     - tree
     - vim-enhanced
     - virt-install
