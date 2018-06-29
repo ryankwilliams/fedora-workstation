@@ -11,6 +11,7 @@
     - docker-ce
     - gcc
     - git
+    - git-cola
     - gitg
     - google-chrome-stable
     - gnome-tweak-tool
