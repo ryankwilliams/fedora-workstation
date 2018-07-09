@@ -1,0 +1,9 @@
+---
+- name: Install packages by flatpak
+  command:
+    "flatpak install -y flathub {{ item }}"
+  loop:
+    - com.spotify.Client
+    - org.videolan.VLC
+  tags:
+    - install_flatpak_packages
