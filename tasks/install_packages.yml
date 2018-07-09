@@ -10,6 +10,7 @@
     - copr-rpmbuild
     - docker-ce
     - f28-backgrounds-extras-gnome
+    - flatpak
     - gcc
     - git
     - git-cola
