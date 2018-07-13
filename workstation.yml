@@ -19,6 +19,7 @@
     - include_tasks: tasks/install_packages.yml
       tags:
         - install_packages
+        - install_vagrant
 
     - include_tasks: tasks/install_flatpak_packages.yml
       tags:

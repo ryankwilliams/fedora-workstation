@@ -51,10 +51,24 @@
   tags:
     - install_packages
 
+- name: Download vagrant rpm
+  get_url:
+    url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}
+    /vagrant_{{ vagrant_version }}_x86_64.rpm"
+    dest: .
+  tags:
+    - install_vagrant
+
 - name: Install vagrant
   dnf:
-    name: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}
-    /vagrant_{{ vagrant_version }}_x86_64.rpm"
+    name: ./vagrant_{{ vagrant_version }}_86_64.rpm
     state: latest
   tags:
-    - install_packages
+    - install_vagrant
+
+- name: Remove vagrant rpm
+  file:
+    path: ./vagrant_{{ vagrant_version }}_86_64.rpm
+    state: absent
+  tags:
+    - install_vagrant
