@@ -1,9 +1,17 @@
 ---
+- name: Add flatpak remotes
+  command:
+    "flatpak remote-add --if-not-exists {{ item.name }} {{ item.url }}"
+  loop:
+    - { name: 'flathub', url: 'https://flathub.org/repo/flathub.flatpakrepo' }
+  tags:
+    - install_flatpak_packages
+
 - name: Install packages by flatpak
   command:
-    "flatpak install -y flathub {{ item }}"
+    "flatpak install -y {{ item.remote }} {{ item.name }}"
   loop:
-    - com.spotify.Client
-    - org.videolan.VLC
+    - { remote: 'flathub', name: 'com.spotify.Client' }
+    - { remote: 'flathub', name: 'org.videolan.VLC' }
   tags:
     - install_flatpak_packages
