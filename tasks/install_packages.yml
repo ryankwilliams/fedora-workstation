@@ -4,6 +4,7 @@
     name: "{{ item }}"
     state: latest
   loop:
+    - asciinema
     - beaker-client
     - code
     - copr-cli
