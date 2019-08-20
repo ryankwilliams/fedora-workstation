@@ -1,4 +1,33 @@
-# fedora-workstation
+# Fedora Workstation Setup
 
-A repository containing a bunch of Ansible playbooks to configure my Fedora
-Workstation based on my preferences.
+A repository which automates the deployment of my fedora workstation based
+on my preferences by using ansible.
+
+## Getting Started
+
+On a fresh install of fedora workstation, I would first install `git` and
+`ansible`. The minimal version of ansible tested with this playbook is
+version `>=2.5`.
+
+```
+$ sudo dnf install -y ansible git
+```
+
+Once both dependencies are installed, at the root of this repository is a
+playbook named `workstation.yml`. Running this playbook will run through all
+configuration to configure my fedora workstation.
+
+```
+$ ansible-playbook workstation.yml
+```
+
+Most ansible tasks I created have been tagged. This allows me to easily run
+certain configuration (as needed).
+
+```
+$ ansible-playbook workstation.yml --tag <tag-name>
+```
+
+## Available Tags
+
+Coming soon!
