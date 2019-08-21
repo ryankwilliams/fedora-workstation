@@ -45,3 +45,5 @@ the system.
 
 **add-docker-ce-repo** - This tag will add docker ce repository to the
 system.
+
+**set-hostname** - This tag will set the system hostname.

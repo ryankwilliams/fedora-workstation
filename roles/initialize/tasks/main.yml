@@ -57,3 +57,10 @@
     - add-repos
     - add-docker-ce-repo
     - initialize
+
+- name: Set system hostname
+  hostname:
+    name: "{{ hostname }}"
+  tags:
+    - set-hostname
+    - initialize

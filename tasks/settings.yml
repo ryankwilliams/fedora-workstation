@@ -1,10 +1,4 @@
 ---
-- name: Set hostname
-  hostname:
-    name: "{{ hostname }}"
-  tags:
-    - system_settings
-
 - name: Create groups
   group:
     name: "{{ item }}"
