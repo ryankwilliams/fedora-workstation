@@ -30,7 +30,3 @@
     - include_tasks: tasks/settings.yml
       tags:
         - system_settings
-
-    - include_tasks: tasks/install_vagrant_libvirt.yml
-      tags:
-        - vagrant_libvirt_plugin

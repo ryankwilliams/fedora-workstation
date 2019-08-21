@@ -19,6 +19,3 @@ services:
   - cups-browsed
   - docker
   - libvirtd
-
-# vagrant version
-vagrant_version: "2.1.1"

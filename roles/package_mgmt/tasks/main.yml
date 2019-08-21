@@ -6,19 +6,16 @@
     state: latest
   loop:
     - asciinema
-    - beaker-client
     - code
     - copr-cli
     - copr-rpmbuild
     - docker-ce
-    - f28-backgrounds-extras-gnome
     - flatpak
     - gcc
     - git
-    - git-cola
-    - gitg
     - google-chrome-stable
     - gnome-tweak-tool
+    - groovy
     - hexchat
     - krb5-workstation
     - libffi
@@ -30,12 +27,9 @@
     - make
     - openssl
     - openssl-devel
-    - pipenv
     - python2-cryptography
     - python2-devel
-    - python2-ipython
     - python2-libselinux
-    - python2-openstackclient
     - python3-devel
     - python3-ipython
     - python3-libselinux
@@ -49,6 +43,7 @@
     - tilix
     - tigervnc
     - tree
+    - vagrant-libvirt
     - vim-enhanced
     - virt-install
     - virt-manager
