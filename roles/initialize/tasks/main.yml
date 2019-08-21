@@ -4,7 +4,6 @@
   dnf:
     name: "{{ item }}"
     state: absent
-    autoremove: yes
   loop:
     - cheese
     - evolution
