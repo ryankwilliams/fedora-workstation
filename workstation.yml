@@ -12,14 +12,9 @@
       import_role:
         name: initialize
 
-    - include_tasks: tasks/install_packages.yml
-      tags:
-        - install_packages
-        - install_vagrant
-
-    - include_tasks: tasks/install_flatpak_packages.yml
-      tags:
-        - install_flatpak_packages
+    - name: Perform system package management (install packages)
+      import_role:
+        name: package_mgmt
 
     - include_tasks: tasks/install_python_packages.yml
       tags:

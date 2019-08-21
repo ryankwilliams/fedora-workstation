@@ -58,6 +58,17 @@
     - add-docker-ce-repo
     - initialize
 
+- name: Add flathub remote repository for flatpak
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: system
+  tags:
+    - add-repos
+    - add-flatpak-flathub-repo
+    - initialize
+
 - name: Set system hostname
   hostname:
     name: "{{ hostname }}"

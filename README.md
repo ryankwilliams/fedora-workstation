@@ -46,4 +46,11 @@ the system.
 **add-docker-ce-repo** - This tag will add docker ce repository to the
 system.
 
+**add-flatpak-flathub-repo** - This tag will add flatpak flathub repository to
+the system.
+
 **set-hostname** - This tag will set the system hostname.
+
+**install-rpm-packages** - This tag will install rpm packages.
+
+**install-packages** - This tag will install all packages (rpm, pip, etc).

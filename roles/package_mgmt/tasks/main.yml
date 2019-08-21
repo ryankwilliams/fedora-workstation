@@ -1,0 +1,68 @@
+---
+
+- name: Install rpm packages
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - asciinema
+    - beaker-client
+    - code
+    - copr-cli
+    - copr-rpmbuild
+    - docker-ce
+    - f28-backgrounds-extras-gnome
+    - flatpak
+    - gcc
+    - git
+    - git-cola
+    - gitg
+    - google-chrome-stable
+    - gnome-tweak-tool
+    - hexchat
+    - krb5-workstation
+    - libffi
+    - libffi-devel
+    - libvirt
+    - libvirt-devel
+    - libxml2-devel
+    - libxslt-devel
+    - make
+    - openssl
+    - openssl-devel
+    - pipenv
+    - python2-cryptography
+    - python2-devel
+    - python2-ipython
+    - python2-libselinux
+    - python2-openstackclient
+    - python3-devel
+    - python3-ipython
+    - python3-libselinux
+    - python3-openstackclient
+    - qemu
+    - qemu-kvm
+    - redhat-rpm-config
+    - remmina
+    - ruby
+    - ruby-devel
+    - tilix
+    - tigervnc
+    - tree
+    - vim-enhanced
+    - virt-install
+    - virt-manager
+    - virt-viewer
+  tags:
+    - install-rpm-packages
+    - install-packages
+
+- name: Install flatpak packages
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - com.spotify.Client
+  tags:
+    - install-flatpak-packages
+    - install-packages
