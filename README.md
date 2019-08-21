@@ -30,4 +30,18 @@ $ ansible-playbook workstation.yml --tag <tag-name>
 
 ## Available Tags
 
-Coming soon!
+**initialize** - This tag will run all initialization tasks. This consist of
+removing unused applications, setting dnf repositories, etc.
+
+**remove-packages** - This tag will remove unused applications.
+
+**add-repos** - This tag will add dnf repositories to the system.
+
+**add-chrome-repo** - This tag will add Google Chrome repository to the
+system.
+
+**add-vscode-repo** - This tag will add Visual Studio Code repository to
+the system.
+
+**add-docker-ce-repo** - This tag will add docker ce repository to the
+system.

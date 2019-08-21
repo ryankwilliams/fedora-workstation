@@ -8,13 +8,9 @@
     - vars/main.yml
 
   tasks:
-    - include_tasks: tasks/remove_packages.yml
-      tags:
-        - remove_packages
-
-    - include_tasks: tasks/install_repositories.yml
-      tags:
-        - install_repos
+    - name: Perform system initialization
+      import_role:
+        name: initialize
 
     - include_tasks: tasks/install_packages.yml
       tags:

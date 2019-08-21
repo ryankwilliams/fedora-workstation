@@ -1,0 +1,61 @@
+---
+
+- name: Delete unused applications from distribution install
+  dnf:
+    name: "{{ item }}"
+    state: absent
+    autoremove: yes
+  loop:
+    - cheese
+    - evolution
+    - gnome-boxes
+    - gnome-calendar
+    - gnome-contacts
+    - gnome-maps
+    - gnome-initial-setup
+    - rhythmbox
+    - shotwell
+    - simple-scan
+  tags:
+    - remove-packages
+    - initialize
+
+- name: Add google chrome repository
+  yum_repository:
+    name: google-chrome
+    description: google-chrome
+    baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+  tags:
+    - add-repos
+    - add-chrome-repo
+    - initialize
+
+- name: Add visual studio code repository
+  yum_repository:
+    name: visual-studio-code
+    description: visual-studio-code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  tags:
+    - add-repos
+    - add-vscode-repo
+    - initialize
+
+# hard coded to f29 due to docker ce does not support f30 yet
+- name: Add docker ce repository
+  yum_repository:
+    name: docker-ce-stable
+    description: docker-ce-stable
+    baseurl: https://download.docker.com/linux/fedora/29/$basearch/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+  tags:
+    - add-repos
+    - add-docker-ce-repo
+    - initialize
