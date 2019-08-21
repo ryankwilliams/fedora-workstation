@@ -46,12 +46,11 @@
     - add-vscode-repo
     - initialize
 
-# hard coded to f29 due to docker ce does not support f30 yet
 - name: Add docker ce repository
   yum_repository:
     name: docker-ce-stable
     description: docker-ce-stable
-    baseurl: https://download.docker.com/linux/fedora/29/$basearch/stable
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
     enabled: yes
     gpgcheck: yes
     gpgkey: https://download.docker.com/linux/fedora/gpg
