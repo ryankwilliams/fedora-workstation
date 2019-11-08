@@ -18,6 +18,7 @@
     - groovy
     - hexchat
     - krb5-workstation
+    - krb5-devel
     - libffi
     - libffi-devel
     - libvirt
@@ -27,9 +28,6 @@
     - make
     - openssl
     - openssl-devel
-    - python2-cryptography
-    - python2-devel
-    - python2-libselinux
     - python3-devel
     - python3-ipython
     - python3-libselinux
@@ -37,7 +35,6 @@
     - qemu
     - qemu-kvm
     - redhat-rpm-config
-    - remmina
     - ruby
     - ruby-devel
     - tilix
