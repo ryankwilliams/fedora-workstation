@@ -1,0 +1,21 @@
+---
+- name: Install virtual environment packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+    extra_args: "--user"
+  loop:
+    - virtualenv
+    - virtualenvwrapper
+  tags:
+    - install-python-venv-packages
+    - python-setup
+
+- name: Create directory to store all virtual environments
+  file:
+    path: "/home/{{ default_user }}/{{ python_venv_dirname }}"
+    state: directory
+    mode: '0755'
+  tags:
+    - create-python-venv-dir
+    - python-setup

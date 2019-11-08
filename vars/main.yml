@@ -19,3 +19,6 @@ services:
   - cups-browsed
   - docker
   - libvirtd
+
+# python virtual environment directory
+python_venv_dirname: .envs

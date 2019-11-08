@@ -54,3 +54,11 @@ the system.
 **install-rpm-packages** - This tag will install rpm packages.
 
 **install-packages** - This tag will install all packages (rpm, pip, etc).
+
+**python-setup** - This tag will perform python setup for development.
+
+**install-python-venv-packages** - This tag will install the packages needed to
+to work with Python virtual environments.
+
+**create-python-venv-dir** - This tag will create the directory to store all
+python virtual environments created using virtualenvwrapper.

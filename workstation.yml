@@ -15,9 +15,9 @@
       import_role:
         name: package_mgmt
 
-    - include_tasks: tasks/install_python_packages.yml
-      tags:
-        - install_python_packages
+    - name: Perform python setup
+      import_role:
+        name: python_setup
 
     - include_tasks: tasks/install_jetbrains_toolbox.yml
       tags:
