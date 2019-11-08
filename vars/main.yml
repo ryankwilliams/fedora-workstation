@@ -7,7 +7,7 @@ default_user: rywillia
 hostname: laptop
 
 # jetbrains toolbox version
-jetbrains_toolbox: "1.8.3678"
+jetbrains_toolbox: "1.16.6016"
 
 # groups to create
 custom_groups:
