@@ -28,6 +28,7 @@
     - make
     - openssl
     - openssl-devel
+    - python36
     - python3-devel
     - python3-ipython
     - python3-libselinux
