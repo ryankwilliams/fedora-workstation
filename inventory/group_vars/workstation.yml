@@ -1,4 +1,6 @@
 ---
+ansible_connection: local
+ansible_python_interpreter: /usr/bin/python3
 
 # default user
 default_user: rywillia
@@ -6,18 +8,16 @@ default_user: rywillia
 # hostname
 hostname: laptop
 
-# jetbrains toolbox version
-jetbrains_toolbox: "1.16.6016"
+# jetbrains toolbox
+jetbrains_toolbox: "jetbrains-toolbox-1.18.7609"
 
 # groups to create
 custom_groups:
-  - docker
   - libvirt
 
 # services
 services:
   - cups-browsed
-  - docker
   - libvirtd
 
 # python virtual environment directory
