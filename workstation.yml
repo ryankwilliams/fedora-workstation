@@ -61,6 +61,7 @@
             - copr-rpmbuild
             - gcc
             - git
+            - git-crypt
             - google-chrome-stable
             - gnome-tweak-tool
             - hexchat
