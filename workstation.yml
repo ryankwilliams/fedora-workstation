@@ -65,6 +65,7 @@
             - google-chrome-stable
             - gnome-tweak-tool
             - hexchat
+            - jq
             - krb5-workstation
             - krb5-devel
             - libffi
