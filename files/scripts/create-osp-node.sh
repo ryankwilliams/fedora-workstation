@@ -64,4 +64,3 @@ openstack server create \
 $INSTANCE_NAME
 
 log "Request to launch instance was successful!"
-

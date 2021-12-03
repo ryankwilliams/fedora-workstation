@@ -52,5 +52,4 @@
           - virt-install
           - virt-manager
           - virt-viewer
-        state: latest
   become: true

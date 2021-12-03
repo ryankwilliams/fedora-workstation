@@ -3,7 +3,7 @@
   ansible.builtin.unarchive:
     src: "https://download.jetbrains.com/toolbox/{{ jetbrains_toolbox }}.tar.gz"
     dest: "/tmp"
-    remote_src: yes
+    remote_src: true
 
 - name: Move jetbrains toolbox to official location
   ansible.builtin.copy:
