@@ -34,6 +34,7 @@
           - libxml2-devel
           - libxslt-devel
           - make
+          - ocm-cli
           - openssl
           - openssl-devel
           - podman
