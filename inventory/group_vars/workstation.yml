@@ -1,4 +1,5 @@
 ---
+# ansible vars
 ansible_connection: local
 ansible_python_interpreter: /usr/bin/python3
 
@@ -6,10 +7,10 @@ ansible_python_interpreter: /usr/bin/python3
 default_user: rywillia
 
 # hostname
-hostname: laptop
+hostname: t14s
 
 # jetbrains toolbox
-jetbrains_toolbox: "jetbrains-toolbox-1.18.7609"
+jetbrains_toolbox: "jetbrains-toolbox-1.22.10774"
 
 # groups to create
 custom_groups:
@@ -19,6 +20,3 @@ custom_groups:
 services:
   - cups-browsed
   - libvirtd
-
-# python virtual environment directory
-python_venv_dirname: .envs

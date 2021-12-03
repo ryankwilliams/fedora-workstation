@@ -1,0 +1,20 @@
+---
+- block:
+    - name: Add google chrome repository
+      ansible.builtin.yum_repository:
+        name: google-chrome
+        description: google-chrome
+        baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+        enabled: yes
+        gpgcheck: yes
+        gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+
+    - name: Add visual studio code repository
+      ansible.builtin.yum_repository:
+        name: visual-studio-code
+        description: visual-studio-code
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        enabled: yes
+        gpgcheck: yes
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  become: true

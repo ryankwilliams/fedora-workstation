@@ -1,0 +1,23 @@
+---
+- name: Create {{ default_user }} home directories
+  ansible.builtin.file:
+    path: "/home/{{ default_user }}/{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - .scripts
+    - .secrets
+    - .static
+
+- name: Move files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "/home/{{ default_user }}/{{ item.dest }}"
+    mode: 0755
+  loop:
+    - { src: "files/.bashrc", dest: ".bashrc" }
+    - { src: "files/.gitignore", dest: ".gitignore" }
+    - { src: "files/.vimrc", dest: ".vimrc" }
+    - { src: "files/scripts/kinit.sh", dest: ".scripts/kinit.sh" }
+    - { src: "files/scripts/create-osp-node.sh", dest: ".scripts/create-osp-node.sh" }
+    - { src: "files/scripts/delete-osp-node.sh", dest: ".scripts/delete-osp-node.sh" }

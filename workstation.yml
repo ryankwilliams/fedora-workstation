@@ -3,156 +3,20 @@
   hosts: workstation
 
   tasks:
-    - block:
-        - name: Add Google Chrome repository
-          yum_repository:
-            name: google-chrome
-            description: google-chrome
-            baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
-            enabled: yes
-            gpgcheck: yes
-            gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    - name: Add RPM based repositories
+      ansible.builtin.include_tasks: tasks/add_repos.yml
 
-        - name: Add VS Code repository
-          yum_repository:
-            name: visual-studio-code
-            description: visual-studio-code
-            baseurl: https://packages.microsoft.com/yumrepos/vscode
-            enabled: yes
-            gpgcheck: yes
-            gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    - name: Peform global system wide setup
+      ansible.builtin.include_tasks: tasks/global_setup.yml
 
-        - name: Create groups
-          group:
-            name: "{{ item }}"
-            state: present
-          loop: "{{ custom_groups }}"
+    - name: Manage RPM packages
+      ansible.builtin.include_tasks: tasks/rpm_packages.yml
 
-        - name: Add groups to {{ default_user }}
-          user:
-            name: "{{ default_user }}"
-            groups: "{{ item }}"
-          loop: "{{ custom_groups }}"
+    - name: Managed systemd services
+      ansible.builtin.include_tasks: tasks/services.yml
 
-        - name: Set hostname
-          hostname:
-            name: "{{ hostname }}"
+    - name: Install jetbrains toolbox
+      ansible.builtin.include_tasks: tasks/jetbrains_toolbox.yml
 
-        - name: Uninstall packages
-          dnf:
-            name: "{{ item }}"
-            state: absent
-          loop:
-            - cheese
-            - gnome-calendar
-            - gnome-contacts
-            - gnome-maps
-            - rhythmbox
-            - simple-scan
-
-        - name: Install packages
-          dnf:
-            name: "{{ item }}"
-            state: latest
-          loop:
-            - asciinema
-            - code
-            - copr-cli
-            - copr-rpmbuild
-            - gcc
-            - git
-            - git-crypt
-            - google-chrome-stable
-            - gnome-tweak-tool
-            - hexchat
-            - jq
-            - krb5-workstation
-            - krb5-devel
-            - libffi
-            - libffi-devel
-            - libvirt
-            - libvirt-devel
-            - libxml2-devel
-            - libxslt-devel
-            - make
-            - openssl
-            - openssl-devel
-            - podman
-            - python36
-            - python3-devel
-            - python3-ipython
-            - python3-libselinux
-            - python3-openstackclient
-            - qemu
-            - qemu-kvm
-            - redhat-rpm-config
-            - tilix
-            - tigervnc
-            - tree
-            - vagrant-libvirt
-            - vim-enhanced
-            - virt-install
-            - virt-manager
-            - virt-viewer
-
-        - name: Start and enable services
-          service:
-            name: "{{ item }}"
-            state: started
-            enabled: true
-          loop: "{{ services }}"
-      become: true
-
-    - name: Download/extract JetBrains Toolbox
-      unarchive:
-        src: "https://download.jetbrains.com/toolbox/{{ jetbrains_toolbox }}.tar.gz"
-        dest: "/tmp"
-        remote_src: yes
-
-    - name: Move JetBrains Toolbox to official location
-      copy:
-        src: "/tmp/{{ jetbrains_toolbox }}/jetbrains-toolbox"
-        dest: "/home/{{ default_user }}/.local/bin/"
-        mode: 0755
-
-    - name: Remove JetBrains Toolbox download directory
-      file:
-        path: "/tmp/{{ jetbrains_toolbox }}"
-        state: absent
-
-    - name: Create directory to store all Python virtual environments
-      file:
-        path: "/home/{{ default_user }}/{{ python_venv_dirname }}"
-        state: directory
-        mode: '0755'
-
-    - name: Install Python virtual environment packages
-      pip:
-        name: "{{ item }}"
-        state: latest
-        extra_args: "--user"
-      loop:
-        - virtualenv
-        - virtualenvwrapper
-
-    - name: Create directories
-      file:
-        path: "/home/{{ default_user }}/{{ item }}"
-        state: directory
-        mode: 0755
-      loop:
-        - code
-        - .scripts
-        - .static
-
-    - name: Move files
-      copy:
-        src: "{{ item.src }}"
-        dest: "/home/{{ default_user }}/{{ item.dest }}"
-        mode: 0755
-      loop:
-        - { src: "files/.bashrc", dest: ".bashrc" }
-        - { src: "files/.gitignore", dest: ".gitignore" }
-        - { src: "files/.pypirc", dest: ".pypirc" }
-        - { src: "files/.vimrc", dest: ".vimrc" }
-        - { src: "files/scripts/kinit.sh", dest: ".scripts/kinit.sh" }
+    - name: Directory and file management
+      ansible.builtin.include_tasks: tasks/files.yml

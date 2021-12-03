@@ -1,0 +1,18 @@
+---
+- block:
+    - name: Create groups
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ custom_groups }}"
+
+    - name: Add groups to {{ default_user }}
+      ansible.builtin.user:
+        name: "{{ default_user }}"
+        groups: "{{ item }}"
+      loop: "{{ custom_groups }}"
+
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ hostname }}"
+  become: true

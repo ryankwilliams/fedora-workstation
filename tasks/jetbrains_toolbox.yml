@@ -1,0 +1,17 @@
+---
+- name: Download jetbrains toolbox
+  ansible.builtin.unarchive:
+    src: "https://download.jetbrains.com/toolbox/{{ jetbrains_toolbox }}.tar.gz"
+    dest: "/tmp"
+    remote_src: yes
+
+- name: Move jetbrains toolbox to official location
+  ansible.builtin.copy:
+    src: "/tmp/{{ jetbrains_toolbox }}/jetbrains-toolbox"
+    dest: "/home/{{ default_user }}/.local/bin/"
+    mode: 0755
+
+- name: Remove jetbrains toolbox download directory
+  ansible.builtin.file:
+    path: "/tmp/{{ jetbrains_toolbox }}"
+    state: absent
