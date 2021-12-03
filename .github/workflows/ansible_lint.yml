@@ -1,0 +1,21 @@
+---
+name: PR-Verification
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+
+      - name: Run ansible lint
+        run: make lint
