@@ -1,5 +1,5 @@
 ---
-name: PR-Verification
+name: Ansible lint
 
 on:
   push:
