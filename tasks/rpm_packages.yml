@@ -24,6 +24,7 @@
           - google-chrome-stable
           - gnome-tweak-tool
           - hexchat
+          - https://github.com/jgraph/drawio-desktop/releases/download/v16.1.2/drawio-x86_64-16.1.2.rpm
           - jq
           - krb5-workstation
           - krb5-devel
