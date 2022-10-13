@@ -1,5 +1,5 @@
 ---
-- name: Create {{ default_user }} home directories
+- name: Create home directories for user {{ default_user }}
   ansible.builtin.file:
     path: "/home/{{ default_user }}/{{ item }}"
     state: directory
