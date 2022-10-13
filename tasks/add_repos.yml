@@ -1,5 +1,6 @@
 ---
-- block:
+- name: Manage yum repositories
+  block:
     - name: Add google chrome repository
       ansible.builtin.yum_repository:
         name: google-chrome

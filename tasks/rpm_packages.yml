@@ -1,5 +1,6 @@
 ---
-- block:
+- name: Manage RPM packages
+  block:
     - name: Uninstall packages
       ansible.builtin.dnf:
         name:
