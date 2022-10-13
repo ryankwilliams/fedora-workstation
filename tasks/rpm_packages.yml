@@ -1,5 +1,6 @@
 ---
 - name: Manage RPM packages
+  become: true
   block:
     - name: Uninstall packages
       ansible.builtin.dnf:
@@ -54,4 +55,3 @@
           - virt-install
           - virt-manager
           - virt-viewer
-  become: true
