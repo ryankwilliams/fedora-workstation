@@ -1,5 +1,6 @@
 ---
 - name: Manage yum repositories
+  become: true
   block:
     - name: Add google chrome repository
       ansible.builtin.yum_repository:
@@ -18,4 +19,3 @@
         enabled: true
         gpgcheck: true
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-  become: true

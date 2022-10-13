@@ -1,5 +1,6 @@
 ---
 - name: Global setup
+  become: true
   block:
     - name: Create groups
       ansible.builtin.group:
@@ -16,4 +17,3 @@
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ hostname }}"
-  become: true
