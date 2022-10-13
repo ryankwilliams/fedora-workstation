@@ -1,5 +1,6 @@
 ---
-- block:
+- name: Manage services
+  block:
     - name: Start and enable services
       ansible.builtin.service:
         name: "{{ item }}"

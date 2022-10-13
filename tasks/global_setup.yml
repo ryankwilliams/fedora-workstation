@@ -1,5 +1,6 @@
 ---
-- block:
+- name: Global setup
+  block:
     - name: Create groups
       ansible.builtin.group:
         name: "{{ item }}"
