@@ -13,20 +13,19 @@
           - simple-scan
         state: absent
 
+    - name: Install dnf-plugins-core package
+      ansible.builtin.dnf:
+        name: dnf-plugins-core
+
     - name: Install packages
       ansible.builtin.dnf:
         name:
           - asciinema
           - code
-          - copr-cli
-          - copr-rpmbuild
           - gcc
           - git
           - git-crypt
           - google-chrome-stable
-          - gnome-tweak-tool
-          - hexchat
-          - https://github.com/jgraph/drawio-desktop/releases/download/v16.1.2/drawio-x86_64-16.1.2.rpm
           - jq
           - krb5-workstation
           - krb5-devel
@@ -51,7 +50,10 @@
           - tilix
           - tigervnc
           - tree
+          - vault
           - vim-enhanced
           - virt-install
           - virt-manager
           - virt-viewer
+        enablerepo:
+          - https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
