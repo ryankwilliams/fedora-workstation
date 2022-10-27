@@ -1,0 +1,20 @@
+---
+- name: Install aws-cli
+  block:
+    - name: Download aws cli installer
+      ansible.builtin.unarchive:
+        src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /tmp
+        remote_src: true
+
+    - name: Run aws cli installer
+      ansible.builtin.command: ./install --update
+      args:
+        chdir: /tmp/aws
+      become: true
+      changed_when: true
+  always:
+    - name: Remove aws cli installer
+      ansible.builtin.file:
+        path: /tmp/aws
+        state: absent
