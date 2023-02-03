@@ -7,7 +7,7 @@ on my preferences by using ansible.
 
 On a fresh installation of fedora workstation, I would first install `git` and
 `ansible`. The minimal version of ansible tested with this playbook is
-version `>=2.5`.
+version `>=7.1`.
 
 ```shell
 sudo dnf install -y ansible git
