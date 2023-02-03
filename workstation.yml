@@ -21,5 +21,8 @@
     - name: Install AWS CLI
       ansible.builtin.include_tasks: tasks/aws_cli.yml
 
+    - name: Install go
+      ansible.builtin.include_tasks: tasks/install_go.yml
+
     - name: Directory and file management
       ansible.builtin.include_tasks: tasks/files.yml
