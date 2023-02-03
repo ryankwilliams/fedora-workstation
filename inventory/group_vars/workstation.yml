@@ -10,7 +10,7 @@ default_user: rywillia
 hostname: t14s
 
 # jetbrains toolbox
-jetbrains_toolbox: "jetbrains-toolbox-1.22.10774"
+jetbrains_toolbox: "jetbrains-toolbox-1.27.2.13801"
 
 # groups to create
 custom_groups:
