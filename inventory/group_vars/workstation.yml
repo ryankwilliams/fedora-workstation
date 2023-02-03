@@ -20,3 +20,6 @@ custom_groups:
 services:
   - cups-browsed
   - libvirtd
+
+# go version
+go_version: "1.20"
