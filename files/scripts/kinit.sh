@@ -4,7 +4,7 @@
 
 # how to generate a new keytab
 #   1. ktutil
-#   2. addent -password -p <username>@<REALM> -k 1 -e aes256-cts
+#   2. addent -password -p <username>@<REALM> -k 1 -f
 #   3. wkt <username>.keytab
 #   4. exit
 
