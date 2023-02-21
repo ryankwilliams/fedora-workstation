@@ -3,7 +3,7 @@
   ansible.builtin.file:
     path: "/home/{{ default_user }}/{{ item }}"
     state: directory
-    mode: 0755
+    mode: "0755"
   loop:
     - .scripts
     - .secrets
@@ -13,7 +13,7 @@
   ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: "/home/{{ default_user }}/{{ item.dest }}"
-    mode: 0755
+    mode: "0755"
   loop:
     - {src: "files/.bashrc", dest: ".bashrc"}
     - {src: "files/.gitignore", dest: ".gitignore"}
