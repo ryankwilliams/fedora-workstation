@@ -49,7 +49,7 @@
           - qemu-kvm
           - redhat-rpm-config
           - terraform
-          - tilix
+          - terminator
           - tigervnc
           - tree
           - vault
