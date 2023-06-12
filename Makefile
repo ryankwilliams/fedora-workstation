@@ -2,4 +2,4 @@
 
 .PHONY: lint
 lint:
-	ansible-lint
+	ansible-lint --exclude .github
