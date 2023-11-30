@@ -1,5 +1,8 @@
 # Fedora Workstation Setup
 
+_This repository is now archived and no longer maintained. A new repository
+exists for system setup._
+
 A repository which automates the deployment of my fedora workstation based
 on my preferences by using ansible.
 
